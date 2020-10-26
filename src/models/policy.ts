@@ -1,19 +1,39 @@
-import { adress } from './adress';
-import { bussines } from './bussines';
-import { propertyInfo } from './propertyInfo';
-import {property} from './property';
-import {customer} from './customer';
+export interface policy {
 
 
-export class policy {
-
-    homeInsurance: boolean;
-    otherInsurance: boolean;
-    agreementPersonalData: boolean;
-    agreementPhoneMarketing: boolean;
-    agreementElectronicMarketing: boolean;
-    startDate: Date;
+    agreemnet1: boolean;
+    name: String;
+    surname: String;
+    familyName: String;
+    pesel: String;
+    phoneNumber: String;
+    email: String;
+    maritalStatus: maritalStatus;
+    
     scope: scope;
+    street: String;
+    houseNumber: String;
+    flatNumber: String;
+    postcode: string;
+    city: String;
+
+    propertyType: PropertyType;
+    yearOfConstruct: String;
+    areaOfApartment: number;
+    equipmentInsuranceSum: number;
+    personalThingsInsuranceSum: number;
+    wallsInsuranceSum: number;
+
+    housePostcode: String;
+    houseOwnership: houseOwnership;
+    rentedPremise: boolean;
+    businessActivity: boolean;
+    cession: boolean;
+    peopleLivingNumber: number;
+    underagePersonNumber: number;
+    permanentlyInhabited: boolean;
+    wallsType: wallsType;
+
     security: security;
     multiLatchLocks: number;
     certifiedLocks: number;
@@ -23,16 +43,9 @@ export class policy {
     houseLastThreeYearsClaims: number;
     houseLastTwentyYearsFloods: number;
     insuredPersonNumber: number;
-    clientType: clientType;
-    property: property;
-    propertyInfo: propertyInfo;
-    customer: customer;
-    bussines: bussines;
-    adress: adress;
-
-
+    clientType: string;
 }
-
+  
 enum scope {
     EQUIPMENT,
     PERSONAL_THINGS,
@@ -49,7 +62,29 @@ enum security {
     SECURITY_AGENCY
 
 }
+enum maritalStatus {
 
-enum clientType{
-    SOLE_TRADER
+    SINGLE,
+    MARRIED,
+    DIVORCED,
+    WIDOW,
+    WIDOWER
+}
+enum PropertyType {
+    HOME,
+    APARTMENTT
+}
+enum houseOwnership {
+    OWNERSHIP,
+    COOPERATIVE_OWNERSHIP,
+    LENDING_AGREEMENT,
+    COOPERATIVE_TENANTS,
+    LEASE_AGREEMENT,
+    PERPETUAL_USE,
+    FOR_RENT
+}
+
+enum wallsType {
+    BRINCK,
+    WOODEN
 }
